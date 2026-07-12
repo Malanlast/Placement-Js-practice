@@ -1,0 +1,24 @@
+<!-- Scope determines where variables are accessible in your code, while hoisting is the JavaScript engine's behavior of allocating memory for declarations before executing the code -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Scope</h2>
+
+<p>A GLOBAL variable can be accessed from any script or function.</p>
+
+<p id="demo"></p>
+
+<script>
+let car="RR";
+myFunction();
+function myFunction(){
+	document.getElementById("demo").innerHTML="I can display "+car;
+}
+</script>
+
+</body>
+</html>
+
+
