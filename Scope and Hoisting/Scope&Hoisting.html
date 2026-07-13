@@ -11,11 +11,15 @@
 <p id="demo"></p>
 
 <script>
-let car="RR";
+"use strict";
+car="RR";//declaration
+motor="CC700"//declaration
 myFunction();
 function myFunction(){
-	document.getElementById("demo").innerHTML="I can display "+car;
+	document.getElementById("demo").innerHTML="I can display "+car+" "+motor;
 }
+var car;//initialization
+var motor;//initialization
 </script>
 
 </body>
