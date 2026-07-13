@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<HTML>
+	<body>
+		<h2>string & array</h2>
+		<p id="demo"></p>
+		<p id="demo2"></p>
+		<p id="demo3"></p>
+		<p id="demo4"></p>
+		<p id="demo5"></p>
+		<p id="demo6"></p>
+		<p id="demo7"></p>
+		<p id="demo8"></p>
+		<p id="demo9"></p>
+		<p id="demo10"></p>
+		<p id="demo11"></p>
+		<p id="demo12"></p>
+	</body>
+	<script>
+		let string="shiohhkk21";
+		let arr=["shio","tiger", "moba"];
+		let arr2=["alia","sharadha"];
+		document.getElementById("demo").innerHTML=string.replace("shio","alia");
+		document.getElementById("demo2").innerHTML=string.repeat(7);
+		document.getElementById("demo3").innerHTML=arr.toString();
+		document.getElementById("demo4").innerHTML=arr[0];
+		document.getElementById("demo5").innerHTML=arr[0]="alia";
+		document.getElementById("demo6").innerHTML=arr.indexOf("moba");
+        document.getElementById("demo7").innerHTML=arr.includes("moba");
+        document.getElementById("demo8").innerHTML=arr2.concat(arr);
+		document.getElementById("demo9").innerHTML=arr.reverse("moba");
+		document.getElementById("demo10").innerHTML=arr.slice(2);
+		document.getElementById("demo11").innerHTML=arr.splice(0,2);
+		document.getElementById("demo12").innerHTML=string.toUpperCase();
+	</script>
+</HTML>
