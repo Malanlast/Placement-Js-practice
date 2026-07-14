@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<HTML>
+	<style>
+		h2{
+			background-color: rgb(143, 143, 227);
+		}
+		#type{
+			background-color: rgb(152, 183, 80);
+		}
+	</style>
+	<body>
+		<h2>Practice of fetching api</h2>
+		<hr/>
+		<p id="type"></p>
+		<p id="setup"></p>
+		<p id="punch"></p>
+		<button id="btn">new jock</button>
+	</body>
+	<script>
+		let url="https://official-joke-api.appspot.com/random_joke";
+		async function getJocks(){
+            try{
+				let res=await fetch(url);//await axios.get(url)
+				let data=await res.json();
+				console.log(data);
+				document.getElementById("type").innerText=data.type;
+				document.getElementById("setup").innerText=data.setup;
+				document.getElementById("punch").innerText=data.punchline;
+			}catch(err){
+				console.log(err);
+			}
+		}
+		let btn=document.getElementById("btn");
+		btn.addEventListener("click",getJocks);
+	</script>
+</HTML>
