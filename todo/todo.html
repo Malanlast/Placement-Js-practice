@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<HTML>
+	<style>
+		h2{
+			color:purple;
+		}
+		#bigBox{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center; 
+		}
+		#container{
+            background-color: rgb(211, 204, 211);
+			padding:20px;
+			max-width:520px;
+			margin-top:20px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center; 
+			
+		}
+		.joke{
+			background-color: rgb(180, 169, 190);
+			padding:10px;
+			max-width:500px;
+			margin:10px 0;
+			border-radius: 10px;
+		}
+		button{
+			cursor:pointer;
+			margin-top: 10px;
+		}
+	</style>
+	<body>
+		<h2>todo jock</h2>
+		<button id="btn">get jock</button>
+		<hr/>
+		<div id="bigBox">
+		<div id="container">jokes</div>
+		</div>
+		<script>
+              let url="https://official-joke-api.appspot.com/random_joke";
+			  async function getJock(){
+				try{
+					let res=await fetch(url);
+					let data=await res.json();
+					console.log(data);
+
+					 let joke=document.createElement("div");
+					 joke.className="joke";
+					 joke.innerHTML=`
+					 <h3>${data.type}</h3>
+					 <p>${data.setup}</p>
+					 <p><b>${data.punch}</b></p>
+					 <button>delete</button>
+					 `;
+					 joke.querySelector("button").addEventListener("click",function(){
+						joke.remove();
+					 });
+					 document.getElementById("container").appendChild(joke);
+				}catch(err){
+					console.log(err);
+				}
+			  }
+              let btn=document.getElementById("btn");
+			  btn.addEventListener("click",getJock);
+		</script>
+	</body>
+</HTML>
